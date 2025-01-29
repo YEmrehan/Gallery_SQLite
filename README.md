@@ -1,6 +1,6 @@
-# Gallery Automation: Streamlining Operations with Java and MySQL
+# Gallery Automation: Streamlining Operations with Java and SQLite
 
-This project is a robust automation solution designed for gallery employees to enhance efficiency and streamline day-to-day operations. Built using **Java** for the core logic and **MySQL** for secure and reliable data management, this system is tailored to meet the unique requirements of galleries at the operational level.
+This project is a robust automation solution designed for gallery employees to enhance efficiency and streamline day-to-day operations. Built using **Java** for the core logic and **SQLite** for secure and reliable data management, this system is tailored to meet the unique requirements of galleries at the operational level.
 
 ---
 
@@ -35,10 +35,10 @@ This project is a robust automation solution designed for gallery employees to e
 
 - **Backend:**
   - **Java**: Implements core application logic and processes.
-  - **MySQL**: Ensures secure and efficient database management for storing employee, inventory, and transaction data.
+  - **SQLite**: Ensures secure and efficient database management for storing employee, inventory, and transaction data.
 
 - **Additional Tools:**
-  - **JDBC**: For seamless connectivity between Java and MySQL.
+  - **JDBC**: For seamless connectivity between Java and SQLite.
   - **Apache POI**: For generating and exporting reports in Excel format.
 
 ---

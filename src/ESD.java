@@ -16,9 +16,9 @@ public class ESD {
     public void arabaEkle(JTable jTable1, JTextField tf_id, JTextField tf_sasi_no, JTextField tf_marka,
             JTextField tf_model, JSpinner spn_yil, JSpinner spn_km,
             JComboBox<String> cmb_yakit, JComboBox<String> cmb_vites, JTextField tf_hasar) {
-        baglan baglan = new baglan();
+        Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
-        tablo tablo = new tablo();
+        Tablo tablo = new Tablo();
         tablo.tablo(jTable1, 1);
         try {
             try (Statement sorgu = baglanti.createStatement()) {
@@ -40,16 +40,16 @@ public class ESD {
             baglanti.close();
             JOptionPane.showMessageDialog(null, "Kayıt Eklendi.");
             tablo.tablo(jTable1, 1);
-        } catch (SQLException mySQLException) {
+        } catch (SQLException SQLException) {
             JOptionPane.showMessageDialog(null, "Kayıt Eklenemedi.");
         }
     }
 
     public void calisanEkle(JTable jTable1, JTextField tf_id, JTextField tf_isim, JTextField tf_soyisim,
             JTextField tf_pozisyon, JTextField tf_telefon, JTextArea ta_adres) {
-        baglan baglan = new baglan();
+        Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
-        tablo tablo = new tablo();
+        Tablo tablo = new Tablo();
         tablo.tablo(jTable1, 2);
         try {
             try (Statement sorgu = baglanti.createStatement()) {
@@ -68,15 +68,15 @@ public class ESD {
             baglanti.close();
             JOptionPane.showMessageDialog(null, "Kayıt Eklendi.");
             tablo.tablo(jTable1, 2);
-        } catch (SQLException mySQLException) {
+        } catch (SQLException SQLException) {
             JOptionPane.showMessageDialog(null, "Kayıt Eklenemedi.");
         }
     }
 
     public void musteriEkle(JTable jTable1, JTextField tf_id, JTextField tf_isim, JTextField tf_soyisim, JTextField tf_telefon, JTextArea ta_adres) {
-        baglan baglan = new baglan();
+        Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
-        tablo tablo = new tablo();
+        Tablo tablo = new Tablo();
         tablo.tablo(jTable1, 3);
         try {
             try (Statement sorgu = baglanti.createStatement()) {
@@ -94,16 +94,16 @@ public class ESD {
             baglanti.close();
             JOptionPane.showMessageDialog(null, "Kayıt Eklendi.");
             tablo.tablo(jTable1, 2);
-        } catch (SQLException mySQLException) {
+        } catch (SQLException SQLException) {
             JOptionPane.showMessageDialog(null, "Kayıt Eklenemedi.");
         }
     }
 
     public void satisEkle(JTable jTable1, JTextField tf_id, JTextField tf_araba_id, JTextField tf_musteri_id, JTextField tf_calisan_id,
             JTextField tf_satis_tarihi, JTextField tf_satis_fiyati) {
-        baglan baglan = new baglan();
+        Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
-        tablo tablo = new tablo();
+        Tablo tablo = new Tablo();
         tablo.tablo(jTable1, 4);
         try {
             try (Statement sorgu = baglanti.createStatement()) {
@@ -122,15 +122,15 @@ public class ESD {
             baglanti.close();
             JOptionPane.showMessageDialog(null, "Kayıt Eklendi.");
             tablo.tablo(jTable1, 2);
-        } catch (SQLException mySQLException) {
+        } catch (SQLException SQLException) {
             JOptionPane.showMessageDialog(null, "Kayıt Eklenemedi.");
         }
     }
 
     public void sil(JTable jTable1) {
-        baglan baglan = new baglan();
+        Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
-        tablo tablo = new tablo();
+        Tablo tablo = new Tablo();
         try {
             if (jTable1.getSelectedRowCount() > 0) {
                 if (JOptionPane.showConfirmDialog(null, "Silmek İstiyor musunuz", "Silme İşlemi", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
@@ -148,7 +148,7 @@ public class ESD {
             } else {
                 JOptionPane.showMessageDialog(null, "Lütfen Silmek İstediğiniz Kaydı Tablodan Seçiniz.");
             }
-        } catch (SQLException mySQLExp) {
+        } catch (SQLException SQLException) {
             JOptionPane.showMessageDialog(null, "Kayıt Silinemedi.");
         }
     }
@@ -156,9 +156,9 @@ public class ESD {
     public void arabaDuzenle(JTable jTable1, JTextField tf_id, JTextField tf_sasi_no, JTextField tf_marka,
             JTextField tf_model, JSpinner spn_yil, JSpinner spn_km,
             JComboBox<String> cmb_yakit, JComboBox<String> cmb_vites, JTextField tf_hasar) {
-        baglan baglan = new baglan();
+        Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
-        tablo tablo = new tablo();
+        Tablo tablo = new Tablo();
 
         try {
             // Eğer tablodan bir satır seçilmişse
@@ -256,16 +256,16 @@ public class ESD {
                 // Eğer kullanıcı herhangi bir satır seçmediyse
                 JOptionPane.showMessageDialog(null, "Lütfen Güncellemek İstediğiniz Kaydı Tablodan Seçiniz.");
             }
-        } catch (SQLException mySQLExp) {
+        } catch (SQLException SQLException) {
             // Hata durumunda kullanıcıya bilgi ver
             JOptionPane.showMessageDialog(null, "Kayıt Güncellenemedi.");
         }
     }
 
     public void calisanDuzenle(JTable jTable1, JTextField tf_id, JTextField tf_isim, JTextField tf_soyisim, JTextField tf_pozisyon, JTextField tf_telefon, JTextArea ta_adres) {
-        baglan baglan = new baglan();
+        Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
-        tablo tablo = new tablo();
+        Tablo tablo = new Tablo();
 
         try {
             // Eğer tablodan bir satır seçilmişse
@@ -349,9 +349,9 @@ public class ESD {
     }
 
     public void musteriDuzenle(JTable jTable1, JTextField tf_id, JTextField tf_isim, JTextField tf_soyisim, JTextField tf_telefon, JTextArea ta_adres) {
-        baglan baglan = new baglan();
+        Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
-        tablo tablo = new tablo();
+        Tablo tablo = new Tablo();
 
         try {
             // Eğer tablodan bir satır seçilmişse
@@ -428,9 +428,9 @@ public class ESD {
     }
 
     public void satisDuzanle(JTable jTable1, JTextField tf_araba_id, JTextField tf_musteri_id, JTextField tf_calisan_id, JTextField tf_tarih, JTextField tf_fiyat) {
-        baglan baglan = new baglan();
+        Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
-        tablo tablo = new tablo();
+        Tablo tablo = new Tablo();
         
         try {
             // Eğer tablodan bir satır seçilmişse
@@ -509,7 +509,7 @@ public class ESD {
                 // Eğer kullanıcı herhangi bir satır seçmediyse
                 JOptionPane.showMessageDialog(null, "Lütfen Güncellemek İstediğiniz Kaydı Tablodan Seçiniz.");
             }
-        } catch (SQLException mySQLExp) {
+        } catch (SQLException SQLException) {
             // Hata durumunda kullanıcıya bilgi ver
             JOptionPane.showMessageDialog(null, "Kayıt Güncellenemedi.");
         }

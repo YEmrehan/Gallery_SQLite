@@ -1,13 +1,14 @@
+
 import java.io.PrintStream;
 import java.nio.charset.Charset;
 
-public class calisanlar extends javax.swing.JFrame {
+public class Calisanlar extends javax.swing.JFrame {
 
-    public calisanlar() {
+    public Calisanlar() {
         System.setOut(new PrintStream(System.out, true, Charset.forName("UTF-8")));
         System.out.println("Türkçe karakterler: ç, ğ, ü, ö, ş, ı");
         initComponents();
-        tablo tablo = new tablo();
+        Tablo tablo = new Tablo();
         tablo.tablo(jTable1, 2);
     }
 
@@ -40,7 +41,6 @@ public class calisanlar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Çalışanlar");
         setAutoRequestFocus(false);
-        setPreferredSize(new java.awt.Dimension(850, 700));
 
         lbl_id.setText("ID");
 
@@ -241,29 +241,29 @@ public class calisanlar extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_duzenleActionPerformed
 
     private void btn_arabalarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arabalarActionPerformed
-        arabalar arabalarPage = new arabalar();
+        Arabalar arabalarPage = new Arabalar();
         arabalarPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_arabalarActionPerformed
 
     private void btn_satislarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_satislarActionPerformed
-        satislar satislarPage = new satislar();
+        Satislar satislarPage = new Satislar();
         satislarPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_satislarActionPerformed
 
     private void btn_musterilerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_musterilerActionPerformed
-        musteriler musterilerPage = new musteriler();
+        Musteriler musterilerPage = new Musteriler();
         musterilerPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_musterilerActionPerformed
 
     private void btn_calisanlarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calisanlarActionPerformed
-        calisanlar calisanlarPage = new calisanlar();
+        Calisanlar calisanlarPage = new Calisanlar();
         calisanlarPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_calisanlarActionPerformed
-   
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -273,10 +273,10 @@ public class calisanlar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(calisanlar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Calisanlar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         java.awt.EventQueue.invokeLater(() -> {
-            new calisanlar().setVisible(true);
+            new Calisanlar().setVisible(true);
         });
     }
 

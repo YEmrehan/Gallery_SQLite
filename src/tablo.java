@@ -6,10 +6,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class tablo {
+public class Tablo {
 
     public void tablo(JTable table, int x) {
-        baglan baglan = new baglan();
+        Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
 
         // Kolonlar'ı burada belirliyoruz, x değerine göre.

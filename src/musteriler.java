@@ -1,13 +1,14 @@
+
 import java.io.PrintStream;
 import java.nio.charset.Charset;
 
-public class musteriler extends javax.swing.JFrame {
+public class Musteriler extends javax.swing.JFrame {
 
-    public musteriler() {
+    public Musteriler() {
         System.setOut(new PrintStream(System.out, true, Charset.forName("UTF-8")));
         System.out.println("Türkçe karakterler: ç, ğ, ü, ö, ş, ı");
         initComponents();
-        tablo tablo = new tablo();
+        Tablo tablo = new Tablo();
         tablo.tablo(jTable1, 3);
     }
 
@@ -37,7 +38,6 @@ public class musteriler extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Müşteriler");
-        setPreferredSize(new java.awt.Dimension(850, 700));
 
         lbl_id.setText("ID");
 
@@ -224,25 +224,25 @@ public class musteriler extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_duzenleActionPerformed
 
     private void btn_arabalarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arabalarActionPerformed
-        arabalar arabalarPage = new arabalar();
+        Arabalar arabalarPage = new Arabalar();
         arabalarPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_arabalarActionPerformed
 
     private void btn_satislarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_satislarActionPerformed
-        satislar satislarPage = new satislar();
+        Satislar satislarPage = new Satislar();
         satislarPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_satislarActionPerformed
 
     private void btn_musterilerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_musterilerActionPerformed
-        musteriler musterilerPage = new musteriler();
+        Musteriler musterilerPage = new Musteriler();
         musterilerPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_musterilerActionPerformed
 
     private void btn_calisanlarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calisanlarActionPerformed
-        calisanlar calisanlarPage = new calisanlar();
+        Calisanlar calisanlarPage = new Calisanlar();
         calisanlarPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_calisanlarActionPerformed
@@ -257,7 +257,6 @@ public class musteriler extends javax.swing.JFrame {
         sil.sil(jTable1);
     }//GEN-LAST:event_btn_silActionPerformed
 
-
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -267,11 +266,11 @@ public class musteriler extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(musteriler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Musteriler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         java.awt.EventQueue.invokeLater(() -> {
-            new musteriler().setVisible(true);
+            new Musteriler().setVisible(true);
         });
     }
 

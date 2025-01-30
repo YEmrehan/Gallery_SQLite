@@ -1,14 +1,15 @@
+
 import java.io.PrintStream;
 import java.nio.charset.Charset;
 
-public class arabalar extends javax.swing.JFrame {
+public class Arabalar extends javax.swing.JFrame {
 
-    public arabalar() {
+    public Arabalar() {
         System.setOut(new PrintStream(System.out, true, Charset.forName("UTF-8")));
         System.out.println("Türkçe karakterler: ç, ğ, ü, ö, ş, ı");
         initComponents();
-        tablo tablo = new tablo();
-        tablo.tablo(jTable1,1);
+        Tablo tablo = new Tablo();
+        tablo.tablo(jTable1, 1);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -44,14 +45,13 @@ public class arabalar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Arabalar");
-        setPreferredSize(new java.awt.Dimension(850, 700));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Şasi Numarası", "Marka", "Model", "Yıl", "Kilometre", "Yakıt Tipi", "Viteas Tipi", "Hasar Kaydı"
+                "ID", "Şasi Numarası", "Marka", "Model", "Yıl", "Kilometre", "Yakıt Tipi", "Vites Tipi", "Hasar Kaydı"
             }
         ) {
             Class[] types = new Class [] {
@@ -264,30 +264,30 @@ public class arabalar extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_silActionPerformed
 
     private void btn_duzenleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_duzenleActionPerformed
-       ESD duzenle = new ESD();
-       duzenle.arabaDuzenle(jTable1, tf_id, tf_sasi_no, tf_marka, tf_model, spn_yil, spn_km, cmb_yakit, cmb_vites, tf_hasar);
+        ESD duzenle = new ESD();
+        duzenle.arabaDuzenle(jTable1, tf_id, tf_sasi_no, tf_marka, tf_model, spn_yil, spn_km, cmb_yakit, cmb_vites, tf_hasar);
     }//GEN-LAST:event_btn_duzenleActionPerformed
 
     private void btn_arabalarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arabalarActionPerformed
-        arabalar arabalarPage = new arabalar();
+        Arabalar arabalarPage = new Arabalar();
         arabalarPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_arabalarActionPerformed
 
     private void btn_satislarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_satislarActionPerformed
-        satislar satislarPage = new satislar();
+        Satislar satislarPage = new Satislar();
         satislarPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_satislarActionPerformed
 
     private void btn_musterilerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_musterilerActionPerformed
-        musteriler musterilerPage = new musteriler();
+        Musteriler musterilerPage = new Musteriler();
         musterilerPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_musterilerActionPerformed
 
     private void btn_calisanlarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calisanlarActionPerformed
-        calisanlar calisanlarPage = new calisanlar();
+        Calisanlar calisanlarPage = new Calisanlar();
         calisanlarPage.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_calisanlarActionPerformed
@@ -301,10 +301,10 @@ public class arabalar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(arabalar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Arabalar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         java.awt.EventQueue.invokeLater(() -> {
-            new arabalar().setVisible(true);
+            new Arabalar().setVisible(true);
         });
     }
 

@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class baglan {
+public class Baglan {
 
     public Connection baglan() {
         String yol = "jdbc:sqlite:gallery.db"; // SQLite dosya yolu

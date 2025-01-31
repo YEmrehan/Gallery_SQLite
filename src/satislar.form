@@ -45,6 +45,8 @@
                                   <Component id="tf_satis_tarihi" alignment="0" max="32767" attributes="0"/>
                                   <Component id="tf_satis_fiyati" alignment="0" max="32767" attributes="0"/>
                               </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btn_temizle" min="-2" pref="91" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -125,6 +127,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lbl_calisan_id" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tf_calisan_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_temizle" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -138,7 +141,7 @@
                   <Component id="lbl_satis_fiyati" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="tf_satis_fiyati" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="127" max="32767" attributes="0"/>
+              <EmptySpace pref="126" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="276" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -267,5 +270,13 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="btn_temizle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Temizle"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_temizleActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

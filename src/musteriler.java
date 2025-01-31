@@ -8,8 +8,53 @@ public class Musteriler extends javax.swing.JFrame {
         System.setOut(new PrintStream(System.out, true, Charset.forName("UTF-8")));
         System.out.println("Türkçe karakterler: ç, ğ, ü, ö, ş, ı");
         initComponents();
+
+        // Sayfa açıldığında TextField'lara verileri ekleyelim
+        if (Veriler.musteri_id != null) {
+            tf_id.setText(Veriler.musteri_id);
+        }
+        if (Veriler.musteri_isim != null) {
+            tf_isim.setText(Veriler.musteri_isim);
+        }
+        if (Veriler.musteri_soyisim != null) {
+            tf_soyisim.setText(Veriler.musteri_soyisim);
+        }
+        if (Veriler.musteri_telefon != null) {
+            tf_telefon.setText(Veriler.musteri_telefon);
+        }
+        if (Veriler.musteri_adres != null) {
+            ta_adres.setText(Veriler.musteri_adres);
+        }
+
         Tablo tablo = new Tablo();
         tablo.tablo(jTable1, 3);
+    }
+
+    public void veriTut(int x) {
+        // Çalışanlar sayfasındaki verileri Veriler sınıfına kaydediyoruz
+        Veriler.musteri_id = tf_id.getText();
+        Veriler.musteri_isim = tf_isim.getText();
+        Veriler.musteri_soyisim = tf_soyisim.getText();
+        Veriler.musteri_telefon = tf_telefon.getText();
+        Veriler.musteri_adres = ta_adres.getText();
+
+        if (x == 1) {
+            Arabalar arabalarPage = new Arabalar();
+            arabalarPage.setVisible(true);
+        }
+        if (x == 2) {
+            Satislar satislarPage = new Satislar();
+            satislarPage.setVisible(true);
+        }
+        if (x == 3) {
+            Musteriler musterilerPage = new Musteriler();
+            musterilerPage.setVisible(true);
+        }
+        if (x == 4) {
+            Calisanlar calisanlarPage = new Calisanlar();
+            calisanlarPage.setVisible(true);
+        }
+        this.setVisible(false);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -35,6 +80,7 @@ public class Musteriler extends javax.swing.JFrame {
         btn_calisanlar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btn_temizle = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Müşteriler");
@@ -127,6 +173,13 @@ public class Musteriler extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        btn_temizle.setText("Temizle");
+        btn_temizle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_temizleActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -134,6 +187,18 @@ public class Musteriler extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_adres, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tf_telefon)
+                                .addGap(18, 18, 18)
+                                .addComponent(btn_temizle, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(338, 338, 338))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_soyisim, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -154,18 +219,8 @@ public class Musteriler extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(18, 18, 18)
                                     .addComponent(btn_ekle, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(btn_sil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_adres, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(tf_telefon)
-                                .addGap(30, 30, 30)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 338, Short.MAX_VALUE)
+                                .addComponent(btn_sil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(330, 330, 330)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btn_arabalar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_satislar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -205,12 +260,13 @@ public class Musteriler extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbl_telefon)
-                            .addComponent(tf_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tf_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_temizle))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_adres)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -224,27 +280,19 @@ public class Musteriler extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_duzenleActionPerformed
 
     private void btn_arabalarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arabalarActionPerformed
-        Arabalar arabalarPage = new Arabalar();
-        arabalarPage.setVisible(true);
-        this.setVisible(false);
+        veriTut(1);
     }//GEN-LAST:event_btn_arabalarActionPerformed
 
     private void btn_satislarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_satislarActionPerformed
-        Satislar satislarPage = new Satislar();
-        satislarPage.setVisible(true);
-        this.setVisible(false);
+        veriTut(2);
     }//GEN-LAST:event_btn_satislarActionPerformed
 
     private void btn_musterilerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_musterilerActionPerformed
-        Musteriler musterilerPage = new Musteriler();
-        musterilerPage.setVisible(true);
-        this.setVisible(false);
+        veriTut(3);
     }//GEN-LAST:event_btn_musterilerActionPerformed
 
     private void btn_calisanlarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calisanlarActionPerformed
-        Calisanlar calisanlarPage = new Calisanlar();
-        calisanlarPage.setVisible(true);
-        this.setVisible(false);
+        veriTut(4);
     }//GEN-LAST:event_btn_calisanlarActionPerformed
 
     private void btn_ekleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ekleActionPerformed
@@ -254,8 +302,16 @@ public class Musteriler extends javax.swing.JFrame {
 
     private void btn_silActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_silActionPerformed
         ESD sil = new ESD();
-        sil.sil(jTable1);
+        sil.sil(jTable1, 3);
     }//GEN-LAST:event_btn_silActionPerformed
+
+    private void btn_temizleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_temizleActionPerformed
+        tf_id.setText("");
+        tf_isim.setText("");
+        tf_soyisim.setText("");
+        tf_telefon.setText("");
+        ta_adres.setText("");  // JTextArea için
+    }//GEN-LAST:event_btn_temizleActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -282,6 +338,7 @@ public class Musteriler extends javax.swing.JFrame {
     private javax.swing.JButton btn_musteriler;
     private javax.swing.JButton btn_satislar;
     private javax.swing.JButton btn_sil;
+    private javax.swing.JButton btn_temizle;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

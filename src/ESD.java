@@ -1,3 +1,4 @@
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -33,7 +34,7 @@ public class ESD {
                 String hasar_kaydi = tf_hasar.getText();
 
                 sorgu.executeUpdate(
-                        "INSERT INTO arabalar(id,sasi_numarasi,marka,model,yil,kilometre,yakit_tipi,vites_tipi,hasar_kaydi)"
+                        "INSERT INTO arabalar(id, sasi_numarasi, marka, model, yil, kilometre, yakit_tipi, vites_tipi, hasar_kaydi)"
                         + "VALUES('" + id + "','" + sasi_numarasi + "','" + marka + "','" + model + "','" + yil + "','" + kilometre + "','" + yakit_tipi + "','" + vites_tipi + "','" + hasar_kaydi + "')"
                 );
             }
@@ -61,7 +62,7 @@ public class ESD {
                 String adres = ta_adres.getText();
 
                 sorgu.executeUpdate(
-                        "INSERT INTO arabalar(id,isim,soyisim,pozisyon,telefon,adres)"
+                        "INSERT INTO calisanlar(id, isim, soyisim, pozisyon, telefon, adres)"
                         + "VALUES('" + id + "','" + isim + "','" + soyisim + "','" + pozisyon + "','" + telefon + "','" + adres + "')"
                 );
             }
@@ -87,13 +88,13 @@ public class ESD {
                 String adres = ta_adres.getText();
 
                 sorgu.executeUpdate(
-                        "INSERT INTO arabalar(id,isim,soyisim,telefon,adres)"
+                        "INSERT INTO musteriler(id, isim, soyisim, telefon, adres)"
                         + "VALUES('" + id + "','" + isim + "','" + soyisim + "','" + telefon + "','" + adres + "')"
                 );
             }
             baglanti.close();
             JOptionPane.showMessageDialog(null, "Kayıt Eklendi.");
-            tablo.tablo(jTable1, 2);
+            tablo.tablo(jTable1, 3);
         } catch (SQLException SQLException) {
             JOptionPane.showMessageDialog(null, "Kayıt Eklenemedi.");
         }
@@ -115,19 +116,28 @@ public class ESD {
                 String fiyat = tf_satis_fiyati.getText();
 
                 sorgu.executeUpdate(
-                        "INSERT INTO arabalar(id, araba_id, musteri_id, calisan_id, tarih, fiyat)"
+                        "INSERT INTO satislar(id, araba_id, musteri_id, calisan_id, tarih, fiyat)"
                         + "VALUES('" + id + "','" + araba_id + "','" + musteri_id + "','" + calisan_id + "','" + tarih + "','" + fiyat + "')"
                 );
             }
             baglanti.close();
             JOptionPane.showMessageDialog(null, "Kayıt Eklendi.");
-            tablo.tablo(jTable1, 2);
+            tablo.tablo(jTable1, 4);
         } catch (SQLException SQLException) {
             JOptionPane.showMessageDialog(null, "Kayıt Eklenemedi.");
         }
     }
 
-    public void sil(JTable jTable1) {
+    public void sil(JTable jTable1, int x) {
+        String s = "";
+        switch (x) {
+            case 1 -> s = "arabalar";
+            case 2 -> s = "calisanlar";
+            case 3 -> s = "musteriler";
+            case 4 -> s = "satislar";
+            default -> {
+            }
+        }
         Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
         Tablo tablo = new Tablo();
@@ -139,11 +149,11 @@ public class ESD {
                     String id = jTable1.getValueAt(satirNumarasi, 0).toString();
                     System.out.println("id: " + id);
                     try (Statement sorgu = baglanti.createStatement()) {
-                        sorgu.executeUpdate("DELETE FROM arabalar WHERE id='" + id + "'");
+                        sorgu.executeUpdate("DELETE FROM "+ s +" WHERE id='" + id + "'");
                     }
                     baglanti.close();
                     JOptionPane.showMessageDialog(null, "Seçili Kayıt Silindi.");
-                    tablo.tablo(jTable1, 1);
+                    tablo.tablo(jTable1, x);
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Lütfen Silmek İstediğiniz Kaydı Tablodan Seçiniz.");
@@ -282,7 +292,7 @@ public class ESD {
                 String telefon = tf_telefon.getText();
                 String adres = ta_adres.getText();
                 // SQL UPDATE sorgusu
-                StringBuilder sqlUpdate = new StringBuilder("UPDATE arabalar SET ");
+                StringBuilder sqlUpdate = new StringBuilder("UPDATE calisanlar SET ");
                 List<String> updates = new ArrayList<>();
 
                 // Alanlar boş değilse, sadece güncellenmesi gereken alanları ekle
@@ -367,7 +377,7 @@ public class ESD {
                 String telefon = tf_telefon.getText();
                 String adres = ta_adres.getText();
                 // SQL UPDATE sorgusu
-                StringBuilder sqlUpdate = new StringBuilder("UPDATE arabalar SET ");
+                StringBuilder sqlUpdate = new StringBuilder("UPDATE musteriler SET ");
                 List<String> updates = new ArrayList<>();
 
                 // Alanlar boş değilse, sadece güncellenmesi gereken alanları ekle
@@ -416,7 +426,7 @@ public class ESD {
                 // Kullanıcıya bilgi ver
                 JOptionPane.showMessageDialog(null, "Kayıt Güncellendi.");
                 // Tabloyu güncelle
-                tablo.tablo(jTable1, 2);
+                tablo.tablo(jTable1, 3);
             } else {
                 // Eğer kullanıcı herhangi bir satır seçmediyse
                 JOptionPane.showMessageDialog(null, "Lütfen Güncellemek İstediğiniz Kaydı Tablodan Seçiniz.");
@@ -431,7 +441,7 @@ public class ESD {
         Baglan baglan = new Baglan();
         Connection baglanti = baglan.baglan();
         Tablo tablo = new Tablo();
-        
+
         try {
             // Eğer tablodan bir satır seçilmişse
             if (jTable1.getSelectedRowCount() > 0) {
@@ -449,7 +459,7 @@ public class ESD {
                 String fiyat = tf_fiyat.getText();
 
                 // SQL UPDATE sorgusu
-                StringBuilder sqlUpdate = new StringBuilder("UPDATE arabalar SET ");
+                StringBuilder sqlUpdate = new StringBuilder("UPDATE satislar SET ");
                 List<String> updates = new ArrayList<>();
 
                 // Alanlar boş değilse, sadece güncellenmesi gereken alanları ESD
@@ -467,7 +477,7 @@ public class ESD {
                 }
                 if (!fiyat.isEmpty()) {
                     updates.add("fiyat = ?");
-                }  
+                }
 
                 // Güncelleme kısmını oluştur
                 sqlUpdate.append(String.join(", ", updates));
@@ -493,7 +503,7 @@ public class ESD {
                     if (!fiyat.isEmpty()) {
                         preparedStatement.setString(index++, fiyat);
                     }
-                   
+
                     preparedStatement.setString(index, id);
                     // SQL sorgusunu çalıştır
                     preparedStatement.executeUpdate();
@@ -504,7 +514,7 @@ public class ESD {
                 // Kullanıcıya bilgi ver
                 JOptionPane.showMessageDialog(null, "Kayıt Güncellendi.");
                 // Tabloyu güncelle
-                tablo.tablo(jTable1, 1);
+                tablo.tablo(jTable1, 4);
             } else {
                 // Eğer kullanıcı herhangi bir satır seçmediyse
                 JOptionPane.showMessageDialog(null, "Lütfen Güncellemek İstediğiniz Kaydı Tablodan Seçiniz.");

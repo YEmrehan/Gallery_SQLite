@@ -1,3 +1,4 @@
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,6 +14,13 @@ public class Baglan {
             conn = DriverManager.getConnection(yol);
             if (conn != null) {
                 System.out.println("SQLite veritabanı bağlantısı başarılı.");
+
+                // FOREIGN KEY kısıtlamalarını açıyoruz
+                try (Statement stmt = conn.createStatement()) {
+                    stmt.execute("PRAGMA foreign_keys = ON;");
+                } catch (SQLException e) {
+                    System.err.println("Foreign key ayarı başarısız: " + e.getMessage());
+                }
             }
         } catch (SQLException e) {
             // Hata durumunda kullanıcıya mesaj gösteriyoruz

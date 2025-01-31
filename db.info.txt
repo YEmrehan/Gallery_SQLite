@@ -1,7 +1,0 @@
-SQLite version 3.49.0 2025-01-28 12:50:17
-Enter ".help" for usage hints.
-Connected to a transient in-memory database.
-Use ".open FILENAME" to reopen on a persistent database.
-sqlite> .open gallery.db
-sqlite> .read db.sql
-sqlite>

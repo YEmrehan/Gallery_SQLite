@@ -5,10 +5,10 @@ This project is a robust automation solution designed for gallery employees to e
 ## 📸 Screenshots
 
 <p float="left">
-  <img src="media/ss1.png" width="250" />
-  <img src="media/ss2.png" width="250" />
-  <img src="media/ss3.png" width="250" />
-  <img src="media/ss4.png" width="250" />
+  <img src="media/ss1.png" width="500" />
+  <img src="media/ss2.png" width="500" />
+  <img src="media/ss3.png" width="500" />
+  <img src="media/ss4.png" width="500" />
 </p>
 
 ---

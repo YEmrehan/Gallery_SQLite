@@ -2,6 +2,15 @@
 
 This project is a robust automation solution designed for gallery employees to enhance efficiency and streamline day-to-day operations. Built using **Java** for the core logic and **SQLite** for secure and reliable data management, this system is tailored to meet the unique requirements of galleries at the operational level.
 
+## 📸 Screenshots
+
+<p float="left">
+  <img src="media/ss1.png" width="250" />
+  <img src="media/ss2.png" width="250" />
+  <img src="media/ss3.png" width="250" />
+  <img src="media/ss4.png" width="250" />
+</p>
+
 ---
 
 ## 🚀 Key Features
